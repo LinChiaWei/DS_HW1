@@ -10,10 +10,28 @@
     使用facebook開發的時間序列預測模型Prophet
     模型架構如下：
         使用加法模型：y(t)=g(t)+s(t)+h(t)+ε(t)
-    g(t)：趨勢的影響
-    s(t)：季節性的影響
-    h(t)：節日的影響
-    ε(t)：誤差
-    ![image](https://github.com/LinChiaWei/DS_HW/blob/main/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202022-03-29%20161106.png)
+         g(t)：趨勢的影響
+         s(t)：季節性的影響
+         h(t)：節日的影響
+         ε(t)：誤差
 
+### Trend
+   ##### prophet使用兩種趨勢函數：
+      1.Linear用於不飽和預測，公式如下：
+ ![image](https://github.com/LinChiaWei/DS_HW/blob/main/images/4.png)
+      
+      2.Logistic用於飽和預測，公式如下：
+   ![image](https://github.com/LinChiaWei/DS_HW/blob/main/images/5.png)      
+   
+   ##### 轉折點
+      此外Prophet加入了轉折點(change point)的概念，讓趨勢函數在不同時間內有不同的成長率k，公式如下：
+   ![image](https://github.com/LinChiaWei/DS_HW/blob/main/images/3.png) 
+      
+### Seasonlity
+      prophet用傅立葉級數描述季節性，公式如下：
+   ![image](https://github.com/LinChiaWei/DS_HW/blob/main/images/1.png) 
+   
+### Holiday
+      將不同假日所造成的影響列入考量，公式如下：
+   ![image](https://github.com/LinChiaWei/DS_HW/blob/main/images/2.png)    
     
